@@ -12,6 +12,6 @@ with tempfile.TemporaryDirectory() as tmp:
         sys.executable, '-m', 'pip',
         'download', '--only-binary', ':all:', '--dest', tmp, 'pipx',
     ])
-    sys.path = glob.glob(f'{tmp}/*.whl') + sys.path
+    sys.path = glob.glob(tmp + '/*.whl') + sys.path
     sys.argv = ['pipx', 'install', 'pipx'] + sys.argv[1:]
     runpy.run_module('pipx', run_name='__main__')
