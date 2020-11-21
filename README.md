@@ -36,7 +36,7 @@ python3 pipx-bootstrap.py
 or use ‘curl pipe python’ technique:
 
 ```shell
-curl https://raw.githubusercontent.com/un-def/pipx-bootstrap.py/master/pipx-bootstrap.py | python3
+curl https://raw.githubusercontent.com/un-def/pipx-bootstrap.py/master/pipx-bootstrap.py | python3 -
 ```
 
 Script arguments are passed to `pipx install pipx` command, e.g.,
@@ -45,7 +45,13 @@ Script arguments are passed to `pipx install pipx` command, e.g.,
 python3 pipx-bootstrap.py --verbose --force
 ```
 
-is equivalent to
+and
+
+```shell
+curl https://... | python3 - --verbose --force
+```
+
+are equivalent to
 
 ```shell
 pipx install pipx --verbose --force
